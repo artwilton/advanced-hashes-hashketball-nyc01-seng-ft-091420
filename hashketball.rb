@@ -170,3 +170,7 @@ def winning_team
   away_team_score = game_hash.find {|k, v| k == :away }[1][:players].map {|i| i[:points] }.sum
   home_team_score > away_team_score ? home_team_name : away_team_name
 end
+
+def player_with_longest_name
+  game_hash.map {|k, v| v[:players]}.flatten.map {|i| i[:player_name] }.max_by(&:length)
+end
