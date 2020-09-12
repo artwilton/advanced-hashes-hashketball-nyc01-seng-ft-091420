@@ -176,5 +176,5 @@ def player_with_longest_name
 end
 
 def long_name_steals_a_ton?
-  most_steals = game_hash.map {|k, v| v[:players]}.flatten.map {|i| [i[:player_name], i[:points]]}.to_h.max_by{|k, v| v}[0]
+  most_steals = game_hash.map {|k, v| v[:players]}.flatten.map {|i| [i[:player_name], i[:steals]]}.to_h.max_by{|k, v| v}[0]
 end
